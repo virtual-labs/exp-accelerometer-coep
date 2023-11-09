@@ -189,7 +189,7 @@ function mainPage(){
 
 //cal Frequency
 
- fqFormula= '<img src="images/naturalFq.png" alt=" " width="150" height="50">'
+ fqFormula= '<img src="images/naturalFq.png" alt=" " width="80%" height="80%">'
 
     var id1=1;
      $("#checkAsnFrequency").click(function() {
@@ -243,7 +243,7 @@ function mainPage(){
 	});	
 
 //conver Frequency in Hz
- fqConvrtFormula= '<img src="images/convertFreq.png" alt=" " width="150" height="100">'
+ fqConvrtFormula= '<img src="images/convertFreq.png" alt=" " width="80%" height="80%">'
 	id2=0;
      $("#checkConvertFreq").click(function() {
 			 
@@ -298,7 +298,7 @@ function mainPage(){
 
 
 //Calculate Acceleration
-var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="150" height="75">'
+var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="80%" height="80%">'
        
 	id3=0;
      $("#checkAnsAcceleration").click(function() {
