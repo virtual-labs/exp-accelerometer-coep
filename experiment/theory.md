@@ -6,7 +6,7 @@ An accelerometer is a device that senses the different types of accelerations or
 
 There are several different types of accelerometers, each with its own working principle and advantages:
 
-![1](images/figure1.PNG)
+![1](images/figure1.png)
 
 **Piezoelectric Accelerometers**
 In this type the sensors are made of crystals or ceramics like lead zirconate, lead titanate, etc. This sensor absorbs the vibrations and produces the same amount of electrical signals. The construction of a piezoelectric accelerometer involves a sensing crystal to which a seismic weight is attached. When the sensor experiences an acceleration, the weight exerts a force on the crystal. The piezoelectric crystal converts the force acting upon it to electrical signals, which can be measured to find the acceleration. Piezoelectric accelerometers are highly effective at measuring shocks and vibrations.
@@ -22,7 +22,7 @@ A triaxial accelerometer is a type of accelerometer that can measure acceleratio
 
 ### Working 
 
-![2](images/figure2.PNG)
+![2](images/figure2.png)
 
 An accelerometer works by utilizing an electromechanical sensor that is designed to measure either static or dynamic acceleration. Static acceleration is the constant force acting on a body, like gravity or friction. These forces are predictable and uniform to a large extent. For example, the acceleration due to gravity is constant at 9.8 m/s – and the gravitation force is almost the same at every point on Earth.
 
