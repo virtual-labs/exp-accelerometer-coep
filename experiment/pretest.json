@@ -1,124 +1,64 @@
-
-
-QuestionsJSON = {
-		"data": {
-			"SEC": [{
-
-				"QUES": [{
-					
-  
-					"QC": "Which of the following instrument is useful only for low frequency applications?",
-					"ANS": [{
-						"ANSID": false,
-						"content": "LVDT Accelerometers"
-					}, {
-						"ANSID": false,
-						"content": "Piezo-Electric Accelerometers"
-					}, {
-						"ANSID": true,
-						"content": "Potentiometric Accelerometers"
-					},{
-						"ANSID": false,
-						"content": "Digital Accelerometers"
-					}]
-				}]
-			}, {
-
-				"QUES": [{
-					
-					"QC": "Seismic transducers are also known as ",
-					"ANS": [{
-						"ANSID": false,
-						"content": "Seismic displacement"
-					}, {
-						"ANSID": true,
-						"content": "Seismic accelerometer"
-					}, {
-						"ANSID": false,
-						"content": "Seismic velocity"
-					}, {
-						"ANSID": false,
-						"content": "Seismic acceleration"
-					}]
-					
-				}]
-			},{
-
-				"QUES": [{
-					
-					"QC": "When accelerometers operate in the displacement mode the ratio of forcing frequency to natural frequency should be",
-					"ANS": [{
-						"ANSID": false,
-						"content": "above 200"
-					}, {
-						"ANSID": false,
-						"content": "below 2"
-					}, {
-						"ANSID": false,
-						"content": "below 1"
-					}, {
-						"ANSID": true,
-						"content": "above 2"
-					}]
-					
-				}]
-			},{
-
-				"QUES": [{
-					
-					"QC": "When seismic transducers are used in the acceleration made they should be designed with ",
-					"ANS": [{
-						"ANSID": true,
-						"content": "stiff springs and small mass"
-					}, {
-						"ANSID": false,
-						"content": "heavy mass and weak springs"
-					}, {
-						"ANSID": false,
-						"content": "weak springs and small mass"
-					}, {
-						"ANSID": false,
-						"content": "heavy mass and small mass"
-					}]
-					
-				}]
-			},{
-
-				"QUES": [{
-					
-					"QC": "A piezo-electrical crystal generates voltage when subjected to _______ force.",
-					"ANS": [{
-						"ANSID": false,
-						"content": "Electrical"
-					}, {
-						"ANSID": false,
-						"content": "Gravity"
-					}, {
-						"ANSID": true,
-						"content": "Mechanical"
-					}, {
-						"ANSID": false,
-						"content": "All of the above"
-					}]
-					
-				}]
-			}
-			]
-		}
-
-
-	}
-
-
-
-var ANSWERJSON = {
-			
-				"0" : "All the points mentioned",
-				"1" : "Set the standard output for the required limits of process parameter",
-				"2" : "Set majority of the points of the transmitter output in the operating region",
-				"3" : "Pump discharge flow and Outlet flow",
-				"4" : "Nothing is required to be changed",
-				"5" : "Nil"
-				
-			
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following instrument is useful only for low frequency applications?",
+      "answers": {
+        "a": "LVDT Accelerometers",
+        "b": "Piezo-Electric Accelerometers",
+        "c": "Potentiometric Accelerometers",
+        "d": "Digital Accelerometers"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Seismic transducers are also known as",
+      "answers": {
+        "a": "Seismic displacement",
+        "b": "Seismic accelerometer",
+        "c": "Seismic velocity",
+        "d": "Seismic acceleration"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "When accelerometers operate in the displacement mode the ratio of forcing frequency to natural frequency should be",
+      "answers": {
+        "a": "above 200",
+        "b": "below 2",
+        "c": "below 1",
+        "d": "above 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "When seismic transducers are used in the acceleration made they should be designed with",
+      "answers": {
+        "a": "stiff springs and small mass",
+        "b": "heavy mass and weak springs",
+        "c": "weak springs and small mass",
+        "d": "heavy mass and small mass"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "A piezo-electrical crystal generates voltage when subjected to _______ force.",
+      "answers": {
+        "a": "Electrical",
+        "b": "Gravity",
+        "c": "Mechanical",
+        "d": "All of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+	
+  ]
 }
