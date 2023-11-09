@@ -86,19 +86,19 @@ QuestionsJSON = {
 
 				"QUES": [{
 					
-					"QC": "A piezo-electrical crystal generates voltage when subjected to _______ force.",
+					"QC": "Piezoelectric accelerometers meters:",
 					"ANS": [{
 						"ANSID": false,
-						"content": "Electrical"
+						"content": "should not be used for high frequencies above 100 Hz"
 					}, {
 						"ANSID": false,
-						"content": "Gravity"
+						"content": "should use a monitoring source of low input impedance"
 					}, {
 						"ANSID": true,
-						"content": "Mechanical"
+						"content": "should be used for low frequencies"
 					}, {
 						"ANSID": false,
-						"content": "All of the above"
+						"content": "have a low natural frequency"
 					}]
 					
 				}]
