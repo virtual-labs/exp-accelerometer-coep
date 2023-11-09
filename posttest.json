@@ -1,0 +1,69 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate natural frequency.",
+      "answers": {
+        "a": "345 rad/s",
+        "b": "245 rad/s",
+        "c": "445 rad/s",
+        "d": "300 rad/s"
+      },
+  
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
+      "answers": {
+        "a": "120 m/sec <sup>2</sup>",
+        "b": "1000 m/sec <sup>2</sup>",
+        "c": "1200 m/sec <sup>2</sup>",
+        "d": "100 m/sec <sup>2</sup>"
+      },
+     
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 4 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate natural frequency.",
+      "answers": {
+        "a": "283 rad/s",
+        "b": "290 rad/s",
+        "c": "380 rad/s",
+        "d": "388 rad/s"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },	
+
+	
+	{
+      "question": "An accelerometer has a seismic mass of 0.05 kg and a spring constant of 4 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
+      "answers": {
+        "a": "240 m/sec <sup>2</sup>",
+        "b": "250 m/sec <sup>2</sup>",
+        "c": "2300 m/sec <sup>2</sup>",
+        "d": "2402 m/sec <sup>2</sup>"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+
+	{
+      "question": "Accelerometer is the measurement of _____.",
+      "answers": {
+        "a": "Velocity/time",
+        "b": "Energy/time",
+        "c": "Angle/time",
+        "d": "Height/time"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
+}
