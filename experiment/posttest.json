@@ -2,7 +2,7 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate natural frequency.",?",
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate natural frequency.",
       "answers": {
         "a": "345 rad/s",
         "b": "245 rad/s",
