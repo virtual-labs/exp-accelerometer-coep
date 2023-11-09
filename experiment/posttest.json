@@ -1,124 +1,69 @@
-
-
-QuestionsJSON = {
-		"data": {
-			"SEC": [{
-
-				"QUES": [{
-					
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate natural frequency.",?",
+      "answers": {
+        "a": "345 rad/s",
+        "b": "245 rad/s",
+        "c": "445 rad/s",
+        "d": "300 rad/s"
+      },
   
-					"QC": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate natural frequency.",
-					"ANS": [{
-						"ANSID": false,
-						"content": "345 rad/s"
-					}, {
-						"ANSID": true,
-						"content": "245 rad/s"
-					}, {
-						"ANSID": false,
-						"content": "445 rad/s"
-					},{
-						"ANSID": false,
-						"content": "300  rad/s"
-					}]
-				}]
-			}, {
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
+      "answers": {
+        "a": "120 m/sec <sup>2</sup>",
+        "b": "1000 m/sec <sup>2</sup>",
+        "c": "1200 m/sec <sup>2</sup>",
+        "d": "100 m/sec <sup>2</sup>"
+      },
+     
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 4 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate natural frequency.",
+      "answers": {
+        "a": "283 rad/s",
+        "b": "290 rad/s",
+        "c": "380 rad/s",
+        "d": "388 rad/s"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },	
 
-				"QUES": [{
-					
-					"QC": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 3 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.02 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
-					"ANS": [{
-						"ANSID": false,
-						"content": " 120 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": false,
-						"content": "1000 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": true,
-						"content": "1200 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": false,
-						"content": "100 m/sec <sup>2</sup>"
-					}]
-					
-				}]
-			},{
+	
+	{
+      "question": "An accelerometer has a seismic mass of 0.05 kg and a spring constant of 4 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
+      "answers": {
+        "a": "240 m/sec <sup>2</sup>",
+        "b": "250 m/sec <sup>2</sup>",
+        "c": "2300 m/sec <sup>2</sup>",
+        "d": "2402 m/sec <sup>2</sup>"
+      },
+     
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
 
-				"QUES": [{
-					
-					"QC": "An accelerometer has a seismic mass of 0.05kg and a spring constant of 4 * 10 <sup>3</sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate natural frequency.",
-					"ANS": [{
-						"ANSID": true,
-						"content": "283 rad/s"
-					}, {
-						"ANSID": false,
-						"content": "290 rad/s"
-					}, {
-						"ANSID": false,
-						"content": "380 rad/s"
-					}, {
-						"ANSID": false,
-						"content": "388 rad/s"
-					}]
-					
-				}]
-			},{
-
-				"QUES": [{
-					
-					"QC": "An accelerometer has a seismic mass of 0.05 kg and a spring constant of 4 * 10 <sup> 3 </sup> N/m. Maximum mass displacement is 0.03 m (before the mass hits the stop). Calculate maximum measurable acceleration.",
-					"ANS": [{
-						"ANSID": false,
-						"content": "240 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": false,
-						"content": "250 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": false,
-						"content": "2300 m/sec <sup>2</sup>"
-					}, {
-						"ANSID": true,
-						"content": "2402 m/sec <sup>2</sup>"
-					}]
-					
-				}]
-			},{
-
-				"QUES": [{
-					
-					"QC": "Accelerometer is the measurement of _____",
-					"ANS": [{
-						"ANSID": true,
-						"content": "Velocity/time"
-					}, {
-						"ANSID": false,
-						"content": "Energy/time"
-					}, {
-						"ANSID": false,
-						"content": "Angle/time "
-					}, {
-						"ANSID": false,
-						"content": "Height/time"
-					}]
-					
-				}]
-			}
-			]
-		}
-
-
-	}
-
-
-
-var ANSWERJSON = {
-			
-				"0" : "All the points mentioned",
-				"1" : "Set the standard output for the required limits of process parameter",
-				"2" : "Set majority of the points of the transmitter output in the operating region",
-				"3" : "Pump discharge flow and Outlet flow",
-				"4" : "Nothing is required to be changed",
-				"5" : "Nil"
-				
-			
+	{
+      "question": "Accelerometer is the measurement of _____.",
+      "answers": {
+        "a": "Velocity/time",
+        "b": "Energy/time",
+        "c": "Angle/time",
+        "d": "Height/time"
+      },
+     
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    }
+  ]
 }
