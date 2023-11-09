@@ -1,1 +1,1 @@
-## Experiment name
+## Identify suitable accelerometer for an application.
