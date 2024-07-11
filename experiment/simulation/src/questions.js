@@ -127,11 +127,32 @@
 						 
 	      if(ansCount != 0){
 		
-//				  $("#main-div-conf").html('<img src="images/proximitySensor.png"  width="100%" height="60%" class="img-fluid" >');
-				$("#main-div-conf").html("");
-	             $("#canvas-div").html("");
-				mainPage();
-//				  mimic();
+		$("#main-div-conf").html("");
+	            $("#canvas-div").html("");
+	            $("#selectMethod").prop('hidden',false);
+				$("#centerText1").html('DIAGRAM ');
+	      		$("#centerText2").html('CONFIGURATION');
+	     		var htm = '<img src="images/aTypes.png" class="img-fluid" >'
+	     		$("#canvas-div").html(htm);
+	     		
+	     		
+	     		
+				$("#methodType").change(function() {
+					 $("#methodType").prop('disabled',true);
+					var typeSelect = $("#methodType").val();
+						if(typeSelect==1){
+							mainPage();
+						}else{
+							mainPage2();
+						}
+	
+		
+////				  $("#main-div-conf").html('<img src="images/proximitySensor.png"  width="100%" height="60%" class="img-fluid" >');
+//				$("#main-div-conf").html("");
+//	             $("#canvas-div").html("");
+//				mainPage();
+////				  mimic();
+		});	
 	} 
 	
 	});	

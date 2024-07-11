@@ -165,7 +165,7 @@ var rightE=paper.path("M "+(x1+265)+" "+(y1+110)+" "+"l -400 0 l 0 100 l 25 0 l 
 			+"l 50 0 l 0 60 l 25 0 l 0 -60 l 50 0 l 0 60 l 25 0 l 0 -60 l 50 0 l 0 60 l 25 0 l 0 -60 l 50 0 l 0 60 l 25 0 l 0 -100").attr({'fill':'#5579C6'});		
 var leftE=paper.path("M "+(x1+265)+" "+(y1+410)+" "+"l -400 0 l 0 -100 l 25 0 l 0 60 l 50 0 l 0 -60 l 25 0 l 0 60  "
 			+"l 50 0 l 0 -60 l 25 0 l 0 60 l 50 0 l 0 -60 l 25 0 l 0 60 l 50 0 l 0 -60 l 25 0 l 0 60 l 50 0 l 0 -60 l 25 0 l 0 100").attr({'fill':'#5579C6'});
-middleRod=paper.image("images/Cathod.png",(x1-178.5),(y1+144),495,230);
+middleRod=paper.image("images/cathod.png",(x1-178.5),(y1+144),495,230);
 
 
 // middleRod=paper.path("M "+(x1+30)+" "+(y1+10)+"l 70 0  l 0 90  l 60 0 l 0 20 l-60 0  l 0 55 l 60 0 l 0 20 l-60 0 l 0 55 l 60 0 l 0 20 l-60 0 l 0 55 l 60 0 l 0 20 l-60 0 l 0 55 l 60 0 l 0 20 l-60 0 l 0 90"
@@ -253,12 +253,12 @@ stop.click(function(){
 		console.log("Stop");
 //$("#main-div-conf").html('');
  mainPage();
-$("#finish").prop('hidden',false);
- $("#finish").click(function() {
-		$("#modelMsg").html('<img src="images/cong.gif" class="img-fluid" >');
-		$("#finish").prop('hidden',true);
-
-	});
+//$("#finish").prop('hidden',false);
+// $("#finish").click(function() {
+//		$("#modelMsg").html('<img src="images/cong.gif" class="img-fluid" >');
+//		$("#finish").prop('hidden',true);
+//
+//	});
 })
 
 reset.click(function(){
