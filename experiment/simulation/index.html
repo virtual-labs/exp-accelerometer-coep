@@ -20,17 +20,7 @@
 <!-- 		<link rel="stylesheet" href="css/analysis.css"> -->
 </head>
 
-<style>
-@font-face{
- font-family:'digital-clock-font';
- src: url('font/digital-7.ttf');
-}
-
-
-
-</style>
-
-<body bgproperties="fixed">
+<body >
 
 <header>
 		<img class="Coeplogo" src='images/COEPlogo.png' />
@@ -39,8 +29,24 @@
 		
 	</header>
 <br>
-<!-- <button type="button" class="btn btn-primary" id='graph'>Graph</button> -->
-<div  class="row container-fluid" id="mainDiv">
+<div  class=" container-fluid" > 
+ <div class="row " id="selectMethod" hidden>
+ <div class="col-sm-2"></div>
+      <div class="col-sm-3" >
+       <label class="labelstyle"> Select Accelerometer Type : </label>   
+       </div>
+      <div class="col-sm-4">
+	   <select  class="form-control selectConf" id="methodType"  style="height:auto;">
+	   <option value="0">--- Select Type --- </option>
+	   	<option value="1" >Capacitive MEMS Accelerometer</option>
+	   <option value="2">Piezoelectric Accelerometer</option>
+	   </select>         
+       </div>
+       <div class="col-sm-3"></div>
+       </div> 
+       </div>
+<div  class=" container-fluid" >       
+<div  class="row" id="mainDiv">
 
 <div class="col-lg-6" >
 	             <div class="panel panel-primary">
@@ -60,22 +66,17 @@
 	     			<div class="panel-body" id="main-div-conf">
 
 	     			</div>
-	     			<div class="row" >
-	     			<div class="col-sm-12" id="sub-main-div1" >
-	     			</div>
-	     			<div class="row" id="sub-main-div2">
+	     			
+	     			
+	     			<div class="panel-body" id="tableDesign">
 	     			
 	     			</div>
-	     			<div class="row" id="tableDesign">
-	     			
-	     			</div>
-	 <div class="col-sm-12"><button type="button"    class="btn btn-danger btnStyle" id="finish"  data-toggle="modal" data-target="#selectCheck" hidden><b>FINISH </b></button></div>'
-	     			
-	     			
-	     		</div>
-	   	</div>
+
+	
 	        
 	  </div>      
+	</div>
+	</div>
 	</div>
 	<footer>
 Copyrights &copy; COEP - Virtual Lab
@@ -97,7 +98,9 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
 <script type="text/javascript" src="src/mainPage.js"></script>
+<script type="text/javascript" src="src/mainPage2.js"></script>
 <script type="text/javascript" src="src/mimic.js"></script>
+<script type="text/javascript" src="src/mimic2.js"></script>
 <script type="text/javascript" src="src/graph.js"></script>
 <script type="text/javascript" src="src/table.js"></script>
 
