@@ -1,20 +1,20 @@
 
 tableReading=0;
-function mainPage(){
+function mainPage2(){
+	console.log("mainPage 2.....");
 	$("#main-div-conf").html('');	
      $("#canvas-div").html('');	
      
       $("#centerText1").html('DIAGRAM ');
       $("#centerText2").html('CONFIGURATION');
-      var htm = '<img src="images/aTypes.png" class="img-fluid" >'
+      var htm = '<img src="images/piezoelectricA.png" class="img-fluid" >'
       $("#canvas-div").html(htm);
       
       var modelHtm =  ' <!-- Modal -->'
 				+ '<div class="modal fade" id="selectCheck" role="dialog">'
 				+ ' <div class="modal-dialog modal-md">'
 				+ '    <div class="modal-content">'
-				+ '     <div class="modal-header">'
-				
+				+ '     <div class="modal-header">'				
 				+ '       <h4 class="modal-title">Message box</h4>'
 				+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
 				+ '     </div>'
@@ -27,9 +27,9 @@ function mainPage(){
 				+ '   </div>'
 				+ ' </div>'
 				+ '</div>'
-				+'</div>'
 				+ '</div>'
-				+ ' </div>';
+				+ '</div>'
+				+ '</div>';
       
       
       var selection  ='<div class="row"><div class="col-sm-6" id="materialType">'
@@ -61,9 +61,8 @@ function mainPage(){
 	   +'</select>'
 	   +'</div>'
 	   +'</div>'  
-	   +'<div class="row">'
 	   
-	   
+	   +'<div class="row">' 
 	   +'<div class="col-sm-6">'
 	   +'<label class="labelstyle"> Spring Constant(N/m): </label>'
 	   +'</div>'
@@ -78,37 +77,56 @@ function mainPage(){
 	   +'</select>'
 	   +'</div>'
 	   +'</div>' 
-       +'<div class="col-sm-12" id="buttonDiv">'
-	   +'<button type="button" style="padding: 10px;margin-bottom: 5px; "  class="btn btn-danger btnStyle" id="submitconfig" data-toggle="modal" data-target="#selectCheck"  ><b>  CHECK CONFIGURATION </b></button>' 
-	    +'</div>'
+       
+       +'<div class="row">'	   
+	   +'<div class="col-sm-6">'
+	   +'<label class="labelstyle"> Select Force(N): </label>'
+	   +'</div>'
+	   +'<div class="col-sm-6">'
+	   +'<select  class="form-control selectConf" id="forceVal" " style="height:auto;margin-bottom: 5px;">'
+	   +'<option value="0">--- Select Mass Displacement --- </option>'
+	   +'<option value="1000">1</option>'
+	   +'<option value="1500">2</option>'   
+	   +'<option value="2000">3</option>'
+	   +'<option value="2500">4</option>'
+	   +'<option value="3000">5</option>'
+	   +'</select>'
+	   +'</div>'
+	   +'</div>' 
 	   // +'<br>'
+
+	  +'<div class="row" id="selectConf" >'
+	  +'<div class="col-sm-12">'
+	  +'<button type="button"  "  class="btn btn-danger btnStyle" id="submitconfigPg2" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	  +'</div>'
+	  +'</div>'
 	    
 	//Frequency    
-+'<div class="row" id="freqAnswer"  hidden  >'
-	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Calculate Natural Frequency (rad/s): </label>'
-	   +'</div>'
-		+'<div class="col-sm-3">'
-	+'<input type="text" id="calFreqInput" style= 10px;width:100%;"  class=" form-control" />'
-	   +'</div>'
-	   +'<div class="col-sm-3">'
-	+'<button type="button"  "  class="btn btn-danger btnStyle" id="checkAsnFrequency" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
-	   +'</div>'
-	    +'</div>'
+	  +'<div class="row" id="freqAnswer"  hidden  >'
+	  +'<div class="col-sm-6">'
+	  +'<label class="labelstyle">Calculate Natural Frequency (rad/s): </label>'
+	  +'</div>'
+      +'<div class="col-sm-3">'
+	  +'<input type="text" id="calFreqInput" style= 10px;width:100%;"  class=" form-control" />'
+	  +'</div>'
+	  +'<div class="col-sm-3">'
+	  +'<button type="button"  "  class="btn btn-danger btnStyle" id="checkAsnFrequency" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	  +'</div>'
+	  +'</div>'
 	    //  +'<br>'
 	           
 //Convert frequency	
-+'<div class="row" id="convertFreq" hidden>'
-	   +'<div class="col-sm-6">'
-	   +'<label class="labelstyle">Convert Frequency (Hz): </label>'
-	   +'</div>'
-		+'<div class="col-sm-3">'
-	+'<input type="text" id="ConvrtFreqInput" style= 10px;width:100%;"  class=" form-control" />'
-	   +'</div>'
-	   +'<div class="col-sm-3">'
-	+'<button type="button"  "  class="btn btn-danger btnStyle" id="checkConvertFreq" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
-	   +'</div>'
-	    +'</div>'
+	  +'<div class="row" id="convertFreq" hidden>'
+	  +'<div class="col-sm-6">'
+	  +'<label class="labelstyle">Convert Frequency (Hz): </label>'
+	  +'</div>'
+      +'<div class="col-sm-3">'
+	  +'<input type="text" id="ConvrtFreqInput" style= 10px;width:100%;"  class=" form-control" />'
+	  +'</div>'
+	  +'<div class="col-sm-3">'
+	  +'<button type="button"  "  class="btn btn-danger btnStyle" id="checkConvertFreq" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	  +'</div>'
+	  +'</div>'
 	    // +'<br>'	          
 	          
 	          
@@ -149,12 +167,15 @@ function mainPage(){
 //				+'</div>'
 //				+ '</div>'
 //				+ ' </div>'  
-	$("#main-div-conf").html(selection);	
+		$("#main-div-conf").html(selection);	
+
+ startImg123='<img src="images/startBtn.png" alt=" " width="25" height="25">';
      
-    $("#submitconfig").click(function() {
+     $("#submitconfigPg2").click(function() {
 	massSelect = $("#mass").val();
 	massDSelect = $("#massDisplacement").val();
 	sconstSelect = $("#sconst").val();
+	forceSelect=$('#forceVal').val();
 
 	   if(massSelect==0){
 		$("#errorPanel").prop("hidden",false);
@@ -168,17 +189,19 @@ function mainPage(){
 		$("#errorPanel").prop("hidden",false);
 		$("#modelMsg").html("<b class='boldTextRed'>Select Spring Constant </b>");
 
+	}else if(forceSelect==0){
+		$("#errorPanel").prop("hidden",false);
+		$("#modelMsg").html("<b class='boldTextRed'>Select Force </b>");
 	}else{
-		$("#errorPanel").prop("hidden",true);
-
-		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");		
-		$("#checkConfg").prop('hidden',true);
+		 mimic2(massSelect,massDSelect,sconstSelect,forceSelect);
+		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully. <br> Now Click On Start "+startImg123+"</b>");
 		$("#mass").prop('disabled',true);
 		$("#massDisplacement").prop('disabled',true);
 		$("#sconst").prop('disabled',true);
-		$("#submitconfig").prop('disabled',true);
-		$("#freqAnswer").prop('hidden',false);
-       mimic(massSelect,massDSelect,sconstSelect);
+		$("#forceVal").prop('disabled',true);
+//		$("#submitconfigPg2").prop('disabled',true);
+		
+      
 	
 	}	
 
@@ -189,21 +212,21 @@ function mainPage(){
 
 //cal Frequency
 
- fqFormula= '<img src="images/naturalFq.png" alt=" " width="170" height="60">'
+ fqFormula= '<img src="images/naturalFq.png" alt=" " width="150" height="50">'
 
     var id1=1;
      $("#checkAsnFrequency").click(function() {
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var fq = $("#calFreqInput").val();
+			   var fq = parseFloat($("#calFreqInput").val());
 			   	
-			   if (id1 <= 3) {
+			   if (id1 <= 2) {
 				
 				if (fq == clculatedFrequency) {
 					checkAns = 0;
 					$("#convertFreq").prop('hidden',false);
 					$("#checkAsnFrequency").prop('disabled',true);
-					//addToMasterJSON();
+//					addToMasterJSON2();
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
 				
 				} else if (fq != clculatedFrequency) {
@@ -214,7 +237,7 @@ function mainPage(){
 				}
 	
 	
-			} else if (id1 == 4) {
+			} else if (id1 == 3) {
 				
 				$("#modelMsg").html("<b class='boldTextBlue'>Formula :  f = &Sqrt;(k/m) </b> ");
 
@@ -226,8 +249,7 @@ function mainPage(){
 					checkAns = 0;
 				$("#convertFreq").prop('hidden',false);
 				$("#checkAsnFrequency").prop('disabled',true);
-
-				//addToMasterJSON();
+//				addToMasterJSON2();
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
 				
 					
@@ -243,21 +265,20 @@ function mainPage(){
 	});	
 
 //conver Frequency in Hz
- fqConvrtFormula= '<img src="images/convertFreq.png" alt=" " width="170" height="55">'
-	id2=1;
+ fqConvrtFormula= '<img src="images/convertFreq.png" alt=" " width="170" height="60">'
+	id2=0;
      $("#checkConvertFreq").click(function() {
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var freqConversion = $("#ConvrtFreqInput").val();
+			   var freqConversion = parseFloat($("#ConvrtFreqInput").val());
 	
-		   if (id2 <= 3) {
+		   if (id2 <= 2) {
 				
 				if (freqConversion == convertFq) {
 					checkAns = 0;
 					$("#AccelerationAnswer").prop('hidden',false);
 					$("#checkConvertFreq").prop('disabled',true);
-
-					//addToMasterJSON();
+//					addToMasterJSON2();
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
 				
 				} else if (freqConversion != convertFq) {
@@ -268,7 +289,7 @@ function mainPage(){
 				}
 	
 	
-			} else if (id2 == 4) {
+			} else if (id2 == 3) {
 				
 				$("#modelMsg").html("<b class='boldTextBlue'>Formula : "+fqConvrtFormula+" </b> ");
 
@@ -281,7 +302,7 @@ function mainPage(){
 				$("#AccelerationAnswer").prop('hidden',false);
 				$("#checkConvertFreq").prop('disabled',true);
 
-				//addToMasterJSON();
+//				addToMasterJSON2();
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
 				
 					
@@ -298,28 +319,28 @@ function mainPage(){
 
 
 //Calculate Acceleration
-var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="180" height="55">'
+//var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="150" height="75">'
        
-	id3=1;
+	id3=0;
      $("#checkAnsAcceleration").click(function() {
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var AccelerateVal = $("#acelerateInput").val();
+			   var AccelerateVal = parseFloat($("#acelerateInput").val());
 	
-		 if (id3 <= 3) {
+		 if (id3 <= 2) {
 				
-				if (AccelerateVal == acceleration) {
+				if (AccelerateVal == acceleration2) {
 					checkAns = 0;
 					
 				$("#checkAnsAcceleration").prop('disabled',true);
-//				$("#submitconfig").prop('disabled',false);
+//				$("#submitconfigPg2").prop('disabled',false);
 //				$("#mass").prop('disabled',false);
 //				$("#massDisplacement").prop('disabled',false);
 //				$("#sconst").prop('disabled',false);
 
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
-				addToMasterJSON();
-				} else if (AccelerateVal != acceleration) {
+				addToMasterJSON2();
+				} else if (AccelerateVal != acceleration2) {
 					
 			
 				$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");
@@ -327,31 +348,31 @@ var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="180" heig
 				}
 	
 	
-			} else if (id3 == 4) {
+			} else if (id3 == 3) {
 				
-				$("#modelMsg").html("<b class='boldTextBlue'>Formula : "+Aformula+"</b> ");
+				$("#modelMsg").html("<b class='boldTextBlue'>Formula : F = m &times; a </b> ");
 
 				
 			} else {
 //				ax1 = $("#text2").val().trim();
 	
-				if (AccelerateVal == acceleration) {
+				if (AccelerateVal == acceleration2) {
 					checkAns = 0;
 					
 				$("#checkAnsAcceleration").prop('disabled',true);
 			
-//				$("#submitconfig").prop('disabled',false);
+//				$("#submitconfigPg2").prop('disabled',false);
 //				$("#mass").prop('disabled',false);
 //				$("#massDisplacement").prop('disabled',false);
 //				$("#sconst").prop('disabled',false);
 
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
-				addToMasterJSON();
+				addToMasterJSON2();
 					
 				} else {
 					checkAns = 0;
-					 $("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is " +acceleration+'</b>');
-					
+					 $("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is " +acceleration2+'</b>');
+					 
 				}
 			}
 			id3++;
