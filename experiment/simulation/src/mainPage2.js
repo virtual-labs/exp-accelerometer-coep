@@ -374,7 +374,7 @@ function mainPage2(){
 				
 				if (AccelerateVal == acceleration2) {
 					checkAns = 0;
-					if (tableReading ==4) {
+					if (tableReading2 ==4) {
 						$("#checkAnsAcceleration").prop('disabled',true);
 					}
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer. Click on stop button.</b>");
@@ -397,7 +397,7 @@ function mainPage2(){
 	
 				if (AccelerateVal == acceleration2) {
 					checkAns = 0;
-					if (tableReading ==4) {
+					if (tableReading2 ==4) {
 					$("#checkAnsAcceleration").prop('disabled',true);
 					}
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer. Click on stop button.</b>");
