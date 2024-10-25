@@ -15,9 +15,8 @@
 	<link rel="stylesheet" href="css/header1.css">
 	<link rel="stylesheet" href="css/mainPage.css">
 	<link rel="stylesheet" href="css/style.css">
-
 	<link rel="stylesheet" href="css/psensor.css">
-<!-- 		<link rel="stylesheet" href="css/analysis.css"> -->
+ 		<link rel="stylesheet" href="css/analysis.css">
 </head>
 
 <body >
@@ -30,51 +29,134 @@
 	</header>
 <br>
 <div  class=" container-fluid" > 
- <div class="row " id="selectMethod" hidden>
- <div class="col-sm-2"></div>
-      <div class="col-sm-3" >
+ <div class="row FirstRowtimer " id="selectMethod" hidden>
+      <div class="col-sm-1">
+      </div>
+      <div class="col-sm-3"  >
        <label class="labelstyle"> Select Accelerometer Type : </label>   
-       </div>
-      <div class="col-sm-4">
-	   <select  class="form-control selectConf" id="methodType"  style="height:auto;">
-	   <option value="0">--- Select Type --- </option>
-	   	<option value="1" >Capacitive MEMS Accelerometer</option>
+      </div>
+      <div class="col-sm-2">
+	   <select  class="form-control selectConf" id="methodType"  style="height:auto;" disabled>
+	   <option value="0" >--- Select Type --- </option>
+	   <option value="1">Capacitive MEMS Accelerometer</option>
 	   <option value="2">Piezoelectric Accelerometer</option>
 	   </select>         
-       </div>
-       <div class="col-sm-3"></div>
-       </div> 
-       </div>
+      </div>
+      <div class="col-sm-2">
+      <button type="button" class="btn btn-danger" id="procedure" data-toggle="modal" data-target="#readProcedureModal"><b>READ PROCEDURE</b></button> 
+ 	  </div>
+	 
+ 	  <div class="col-sm-2" style="margin-top: 10px;margin-bottom: 10px"  hidden>
+ 		<span  id="hour" class="timer">00</span>:<span id="minute" class="timer">00</span>:<span class="timer" id="second">00</span> 	     	
+ 	  </div>    
+ </div> 
+</div>
+
+<div id="readProcedureModal" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title"><center>PROCEDURE</center></h4>
+      </div>
+      <div class="modal-body">
+    
+
+<center id="modelTitle"> Basic Knowledge </center>
+ <ol>
+	<li>Read and understand all instructions and questions provided</li>
+	<li>Answer all questions and click on the "Submit Test" button</li>
+	<li>Upon successful completion, click on the "Next Level" button which will appear in place of the "Submit" button</li>
+</ol>
+
+<center id="modelTitle"> Configuration</center>
+ <ol>
+	<li><b>Select Accelerometer Type:</b> Choose the type of accelerometer required for the experiment</li>
+	<li><b>Select Mass:</b> Choose the desired mass in kilograms (kg) from the available options</li>
+	<li><b>Select Mass Displacement:</b> Choose the displacement value in centimeters (cm)</li>
+	<li><b>Select Spring Constant:</b> Choose the spring constant in Newton per meter (N/m)</li>
+	<li>Click the "CHECK CONFIGURATION" button to verify the selected inputs</li>
+</ol>
+
+<center id="modelTitle"> Mimic</center>
+
+<ol>
+	<li>Starting the Simulation:</li>
+	<li>Click on the green "START" button.</li>
+	<li>Observe the frequency graph that appears on the screen</li>
+	<li>Calculate the natural frequency (in radians per second, rad/s) using the formula:</li>
+	<img src="images/formula1.png" class="img-responsive" alt="Cinque Terre">
+	<li>Enter the calculated value in the provided textbox and click on the "SUBMIT" button</li>
+	<li>Convert the natural frequency to frequency in Hertz (Hz) using the formula:</li>
+	<img src="images/formula2.png" class="img-responsive" alt="Cinque Terre">
+	<li>Enter this value in the respective textbox and click on "SUBMIT"</li>
+	<li>Calculate the acceleration <b>(in m/s<sup>2</sup>)</b> based on the readings obtained</li>
+	<li>Enter the calculated acceleration value in the textbox and click on "SUBMIT"</li>
+	<li>Click on the red "STOP" button to end the current simulation</li>
+	<li>Repeat the above steps under Configuration and Mimic a minimum of 5 times to obtain consistent readings</li>
+	</ol>	
+	
+<center id="modelTitle">Calibration</center>
+
+<ol>
+	<li>After taking 5 readings, refer to the Calibration Graph displayed below the reading table</li>
+	<li>Use the graph to adjust and verify the accuracy of your readings</li>
+	<li>Now select another type of accelerometer</li>
+</ol>
+	
+<B> NOTE: Follow steps of "Configuration", "Mimic" for  another type of accelerometer</b>
+
+<!-- <center id="modelTitle">Result</center>
+<ol>
+<li>Click on "FINISH" button.</li>
+</ol> -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<br>
 <div  class=" container-fluid" >       
 <div  class="row" id="mainDiv">
 
 <div class="col-lg-6" >
 	             <div class="panel panel-primary">
-	      			<div class="panel-heading " id="panelHeading2"><center id="centerText1"> DIAGRAM</center>
+	      			<div class="panel-heading " id="panelHeading2"><center id="centerText1">DIAGRAM</center>
 	      			</div>
-	      			<label  id="counter"></label>
+
+	      			<div class="panel-body" id="graph-div">
+	     			</div>
+	     			
 	      			<div class="panel-body" id="canvas-div" >
 	      			<img src="images/acceleroMeter.png" class="img-fluid " width="1000" height="800">
 	      			</div>
+	      			
 
 	   			</div>
 	       </div>
 	<div class="col-lg-6" >
 				<div class="panel panel-primary">
+	      			
 	      			<div class="panel-heading " id="panelHeading1"><center id="centerText2">BASIC KNOWLEDGE</center>
+						
 	      			</div>
+	     			
 	     			<div class="panel-body" id="main-div-conf">
-
 	     			</div>
-	     			
-	     			
+	     		     			
 	     			<div class="panel-body" id="tableDesign">
+	     			</div>
 	     			
+	     			<div class="panel-body" id="sub-main-div1">    			
 	     			</div>
 
-	
-	        
-	  </div>      
+				</div>      
 	</div>
 	</div>
 	</div>
@@ -83,17 +165,33 @@ Copyrights &copy; COEP - Virtual Lab
 </footer>
 </body>
 
-<!-- https://code.jquery.com/jquery-3.5.1.js -->
-<script type="text/javascript" src="lib/jquery.js"></script>
-<script src="https://code.highcharts.com/stock/highstock.js"></script>
-<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- <script type="text/javascript" src="lib/jquery.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script> -->
 <script type="text/javascript" src="lib/raphael.js"></script>
 <script type="text/javascript" src="lib/raphael.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script> -->
+
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+
+<!-- <script src="https://code.highcharts.com/stock/highstock.js"></script> -->
+<!-- <script src="https://code.highcharts.com/stock/modules/exporting.js"></script> -->
+<!-- <script src="https://code.highcharts.com/stock/modules/export-data.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
 
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
@@ -103,7 +201,6 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/mimic2.js"></script>
 <script type="text/javascript" src="src/graph.js"></script>
 <script type="text/javascript" src="src/table.js"></script>
-
-
-
+<script type="text/javascript" src="src/timer.js"></script>
+<script type="text/javascript" src="src/analysis.js"></script>
 </html>

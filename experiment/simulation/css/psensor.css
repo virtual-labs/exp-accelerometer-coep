@@ -47,7 +47,8 @@ hr.new3 {
     margin: 5px;
     padding: 10px;
     border-radius: 10px;
-}	
+}
+	
 #testSubmit
 {
 	padding: 10px;
@@ -60,6 +61,7 @@ hr.new3 {
 	font-weight: bold;
 /* 	box-shadow: 0 5px #999; */
 }
+
 #questionDiv .queno
 { background-color:#31717b; 
 padding:12px; color:#fff; 
@@ -80,6 +82,7 @@ font-size: 20px;
 	font-weight: bold;
 /* 	box-shadow: 0 5px #999; */
 }
+
 .nextLevelBtn {
 	padding: 10px;
     border-radius: 10px;

@@ -1,4 +1,4 @@
-
+var type2Mimic="";
 var m;
 var displasment2;
 var springConstant_K2;
@@ -7,8 +7,9 @@ var f;
 var clculatedFrequency2, convertFq2, a;
 var ArrayJson2=[];
 var MasterJson2={};
-
-function mimic2(massSelect,massDSelect,sconstSelect,forceSelect){
+var Type2star_Flag=0;
+function mimic2(massSelect,massDSelect,sconstSelect2,forceSelect){
+	startTimer();
   $("#canvas-div").html('');	
     $("#centerText1").html('MIMIC');
     $("#centerText2").html('CONFIGURATION');
@@ -40,30 +41,31 @@ var stop=paper.image("images/stopBtn.png",(x1+130),(y1-90), 120,120);
 
 m=parseFloat(massSelect);
 displasment2=parseFloat(massDSelect);
-springConstant_K2=parseFloat(sconstSelect);
+springConstant_K2=parseFloat(sconstSelect2);
+//console.log("springConstant = "+springConstant_K2);
 f=parseFloat(forceSelect);
 a=f/m;
 acceleration2=a.toFixed(2);
-console.log("f= "+f+", m= "+m+"  : calculated value of A= "+acceleration2);
+//console.log("f= "+f+", m= "+m+", calculated value of A= "+acceleration2);
 
 
-springConstant_Val=springConstant_K2*1000;
-console.log("springConstant = "+springConstant_K);
+//springConstant_Val=springConstant_K2*1000;
+
 //natural frequency formula
- freq=springConstant_Val/m;
- 	console.log("freq = "+freq);
+ freq=springConstant_K2/m;
+ 	//console.log("freq = "+freq);
  clculatedFrequency1 = Math.sqrt(freq);
  clculatedFrequency = clculatedFrequency1.toFixed(2);
- 	console.log("clculatedFrequency = "+clculatedFrequency);
+//console.log("clculatedFrequency = "+clculatedFrequency);
  //var pi2=2*3.14;
  
  convertFq1=clculatedFrequency/6.28;
   convertFq= convertFq1.toFixed(2);
- 				console.log("convertFq = "+convertFq);
+//console.log("convertFq = "+convertFq);
   //maximum acceleration (Unit is m/s^a)
  var acceleration=(clculatedFrequency^2)*displasment;
- var acceleration3=acceleration.toFixed(2);
-				console.log("acceleration = "+acceleration3);
+ var acceleration3=a.toFixed(2);
+			//	console.log("acceleration = "+acceleration3);
 
 
 //meterguage3();
@@ -176,16 +178,16 @@ design();
 	    frame=paper.path("M"+(x1+388)+" "+(y1+50)+" "+"l 200 0 l 0 343 l -200 0 z").attr({'stroke-width':15,'stroke':'#595959'});
 //	    shaker=paper.path("M"+(x1+338)+" "+(y1+401)+" "+"l 300 0 l l 0 60 l -300 0 l 0 -60").attr({'fill':'180-#393b3c-#999-#fff-#393b3c'});
 	    shaker=paper.image("images/shakerImg.png",(x1+338),(y1+398),300,55);
-	    Name1 =paper.text((x1+488),(y1+467),"Shaker").attr({'font-size':25});
+	    Name1 =paper.text((x1+488),(y1+467),"Shaker").attr({'stroke-width':5,'font-size':25});
 	 	
-	 	name1=paper.text((x1+487),(y1+305),"Piezoelectric Material").attr({'font-size':15});
+	 	name1=paper.text((x1+487),(y1+305),"Piezoelectric Material").attr({'stroke-width':5,'font-size':15});
 		//name2=paper.text((x1+487),(y1+310),"Material ").attr({'font-size':15});
 
 		spring=paper.path("M "+(x1+487)+" "+(y1+56)+" "+"l 0 20  l 20 12  l -40  12  l 40 12  l -40 12  l 40 12  l -40 12  l 40 12  l -40 12  l 40 12  l -20 12  l 0 20   "
 					+'l 80 0  l 0 60  l -160 0  l 0 -60 l 80 0'
 					+'l 0 -20  l 20 -12  l -40  -12  l 40 -12  l -40 -12  l 40 -12  l -40 -12  l 40 -12  l -40 -12  l 40 -12  l -20 -12  l 0 -20 '
 					).attr({'fill':'00-#464647-#999-#fff-#999-#464647','stroke-width':2});
-		mName=paper.text((x1+487),(y1+245),"Mass = "+m).attr({'font-size':20});
+		mName=paper.text((x1+487),(y1+245),m+" Kg").attr({'stroke-width':5,'font-size':20});
 	
 	}
 	
@@ -309,37 +311,74 @@ var vibrate1;
 var flag=0;
 var vibrate;
 //var counter=0;
+
+stop.node.style.pointerEvents = 'none';
 start.click(function(){
+	start.node.style.pointerEvents = 'none';
+	$("#submitconfigPg2").prop('disabled',true);
+	Type2star_Flag=1;
 		$("#freqAnswer").prop('hidden',false);
 		event.preventDefault();
 		vibrate1= setInterval(animImg,200);
 		vibrate= setInterval(springAnimation,200);
 		
-	
+	stop.node.style.pointerEvents = 'auto';
 });
 
 stop.click(function(){
 		clearInterval(vibrate1);
 		clearInterval(vibrate);
-		 mainPage2();
+		$("#modelMsg").html("<b class='boldTextRed'>Select Another Configrations</b>");
+		var mimic2_T1=document.getElementById('hour').innerText = returnData(hour);
+		var mimic2_T2=document.getElementById('minute').innerText = returnData(minute);
+	    var mimic2_T3=document.getElementById('second').innerText = returnData(second);
+		type2Mimic= mimic2_T1+":"+mimic2_T2+":"+mimic2_T3;
+//		addToTimerMasterJson();
+//		console.log(timeOfMimic2);
+	//	console.log("Mimic2 Type2 : "+mimic2_T1+":"+mimic2_T2+":"+mimic2_T3);
+		reset();
+//		mainPage2();
+		$("#freqAnswer").prop('hidden',true);
+		$("#convertFreq").prop('hidden',true);
+		$("#AccelerationAnswer").prop('hidden',true);
+		$("#mass1").prop("selectedIndex", 0);
+		$("#massDisplacement1").prop("selectedIndex", 0);
+		$("#sconst1").prop("selectedIndex", 0);
+		$("#forceVal1").prop("selectedIndex", 0);
+		$("#mass1").prop('disabled',false);
+		$("#massDisplacement1").prop('disabled',false);
+		$("#sconst1").prop('disabled',false);
+		$("#forceVal1").prop('disabled',false);
+		$("#submitconfigPg2").prop('disabled',false);
+		document.getElementById('calFreqInput').value = '';
+		document.getElementById('ConvrtFreqInput').value = '';
+		document.getElementById('acelerateInput').value = '';
+		$("#checkAsnFrequency").prop('disabled',false);
+		$("#checkConvertFreq").prop('disabled',false);
+		$("#checkAnsAcceleration").prop('disabled',false);
+		startTimer();
+
+		stop.node.style.pointerEvents = 'none';
+
 
 	});
 }
 
 
 function addToMasterJSON2(){
- tempJson2={};
+ 				tempJson2={};
 						tempJson2.m = m;
 						tempJson2.displasment2 = displasment2;
 						tempJson2.springConstant_K2 = springConstant_K2;
 						tempJson2.f = f;
+						tempJson2.clculatedFrequency=clculatedFrequency;
+						tempJson2.convertFq=convertFq;
 						tempJson2.acceleration2 = acceleration2;
 						
 						
 						ArrayJson2.push(tempJson2);
 						MasterJson2.demo = ArrayJson2;
-						console.log(MasterJson2);
+				//		console.log(MasterJson2);
 						tableCreate2(MasterJson2);
-
 }
   

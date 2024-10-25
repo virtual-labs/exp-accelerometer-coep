@@ -1,4 +1,10 @@
-
+		$("#selectMethod").prop('hidden',false);
+		var counterArrayJson=[];
+		var counterMasterJson ={};
+		var totalQues=5;
+		var correctAnswer=0;			
+			var bKnowledgeTime="";
+			var answerTotCount;
 			var flag = false;
 			var myRadio = null;
 			data = {};
@@ -9,7 +15,7 @@
 				+ '<div id = "questionDiv">'
 
 			for (var i = 0; i < QuestionsJSON.data["SEC"].length; i++) {
-
+		
 				for (var j = 0; j < QuestionsJSON.data["SEC"][0].QUES.length; j++) {
 
 					questions += '<div class="col-md-12">'
@@ -55,7 +61,7 @@
 				+ '       <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>'
 				+ '     </div>'
 				+ '     <div class="modal-body">'
-				+ '       <p id="modelMsg">This is a small modal.</p>'
+				+ '       <p id="modelMsg"></p>'
 				+ '     </div>'
 				+ '     <div class="modal-footer">'
 				+ '       <button type="button" class="btn btn-danger" id = "nextPage" data-dismiss="modal" >Okay</button>'
@@ -71,8 +77,9 @@
 		
 
 			$("#main-div-conf").html(questions);
-
-			$('#testSubmit').on('click', function() {		
+		
+			$('#testSubmit').on('click', function() {
+						
 				$("body").css("padding","0px 0px 0px 0px");
 
 					var arr = [];
@@ -113,8 +120,13 @@
 						}
 						dataQues.corrAns = ansCount;
 						 data.corrAns = dataQues;
-						 console.log(data);
+					//	 console.log(data);
 						 
+//						 console.log(`${corrAns}: ${dataQues[ansCount]}`);
+
+						 answerTotCount=ansCount;
+						 correctAnswer=ansCount;
+			//			 console.log(correctAnswer+", correctAnsQues= "+answerTotCount); 
 						 $("#modelMsg").html("<b class='boldTextGreen'>Test Submitted Successfully .<br> Number of Correct Answers  : " + ansCount+"</b>");
                          $('#nextLevelConfig').prop('hidden',false);
 						 
@@ -123,35 +135,42 @@
 		   			
 					}
 					
-					$('#nextLevelConfig').on('click', function() {	
-						 
-	      if(ansCount != 0){
-		
-		$("#main-div-conf").html("");
+			$('#nextLevelConfig').on('click', function() {	
+				var Bk_T1=document.getElementById('hour').innerText = returnData(hour);
+				var Bk_T2=document.getElementById('minute').innerText = returnData(minute);
+				var Bk_T3=document.getElementById('second').innerText = returnData(second);
+				bKnowledgeTime= Bk_T1+":"+Bk_T2+":"+Bk_T3;
+//				addToTimerMasterJson();
+//				console.log("Basic Knowledge Time : "+bKnowledgeTime);
+				var tempCountJson ={};
+				tempCountJson.correctAnswer = correctAnswer; 
+				tempCountJson.totalQues = totalQues; 
+				counterMasterJson.questionary = tempCountJson;
+				reset();
+				if(ansCount != 0){
+				$("#main-div-conf").html("");
 	            $("#canvas-div").html("");
-	            $("#selectMethod").prop('hidden',false);
+	            $("#methodType").prop('disabled',false);
 				$("#centerText1").html('DIAGRAM ');
 	      		$("#centerText2").html('CONFIGURATION');
 	     		var htm = '<img src="images/aTypes.png" class="img-fluid" >'
 	     		$("#canvas-div").html(htm);
-	     		
-	     		
-	     		
-				$("#methodType").change(function() {
-					 $("#methodType").prop('disabled',true);
-					var typeSelect = $("#methodType").val();
+				
+	     		$("#methodType").change(function() {
+					
+				var typeSelect =parseFloat($("#methodType").val());
+	//			console.log("typeSelect = "+typeSelect);
 						if(typeSelect==1){
+							$("#methodType").prop('disabled',true);
 							mainPage();
+//							mimic();
 						}else{
+							$("#methodType").prop('disabled',true);
 							mainPage2();
+							
 						}
-	
-		
-////				  $("#main-div-conf").html('<img src="images/proximitySensor.png"  width="100%" height="60%" class="img-fluid" >');
-//				$("#main-div-conf").html("");
-//	             $("#canvas-div").html("");
-//				mainPage();
-////				  mimic();
+						$("#methodType").children(":selected").css("background-color","#f7dddd").prop("disabled", true);					
+
 		});	
 	} 
 	
@@ -160,7 +179,7 @@
 				
 });
 $('#graph').on('click', function() {	
-		console.log("hi");
+	//	console.log("hi");
 		FrequencyGraph();
 		});	
 
