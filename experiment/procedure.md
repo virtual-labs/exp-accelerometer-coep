@@ -36,4 +36,4 @@
 2. Use the graph to adjust and verify the accuracy of your readings
 3. Now select another type of accelerometer
 
-##### NOTE: Follow steps of "Configuration", "Mimic" for another type of 
+##### NOTE: Follow steps of Configuration, Mimic for another type of Accelerometer
