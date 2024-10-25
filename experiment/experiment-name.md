@@ -1,1 +1,1 @@
-## Identify suitable accelerometer for an application.
+## Identify suitable accelerometer for an application

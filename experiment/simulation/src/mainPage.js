@@ -1,13 +1,40 @@
-
+methodeflag=0;
 tableReading=0;
+var type1Config="";
+var clicksCount=0;
+var cntSubmitConfig=0;
+var cntCalMain1ArrayJson=[];
+var cntCalMain1MasterJson={};
+
+ var cntCalculateMainPage=0;
+    var startcheck_Flag=0;
+	
+	var startEnableFlag=0;
 function mainPage(){
+startTimer();
+	if(methodeflag==1){
+		$("#graph-div").html('');
+		$("#tableDesign").html('');
+    	$("#sub-main-div1").html('');
+    	methodeflag=0;
+	}  
+	$('#graph-div').html('');
 	$("#main-div-conf").html('');	
-     $("#canvas-div").html('');	
+    $("#canvas-div").html('');
+    $("#centerText1").html('DIAGRAM ');
+    $("#centerText2").html('CONFIGURATION');
+    
+    if(Type1star_Flag==0){
+			 var htm = '<img src="images/aTypes.png" class="img-fluid" >'
+     		 $("#canvas-div").html(htm);
+		}else{
+			var htm = '<img src="images/A_Type1.png" class="img-fluid" >'
+      		$("#canvas-div").html(htm);
+		}
+    
+    
+    
      
-      $("#centerText1").html('DIAGRAM ');
-      $("#centerText2").html('CONFIGURATION');
-      var htm = '<img src="images/aTypes.png" class="img-fluid" >'
-      $("#canvas-div").html(htm);
       
       var modelHtm =  ' <!-- Modal -->'
 				+ '<div class="modal fade" id="selectCheck" role="dialog">'
@@ -37,7 +64,8 @@ function mainPage(){
                   +'</div>'
                   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="mass"  style="height:auto;margin-bottom: 5px;">'
-	   +'<option value="0">--- Select mass --- </option>'
+	   +'<option value="0" id="selectTitle1">--- Select mass --- </option>'
+	   +'<option value="0.04">0.04</option>'
 	   	+'<option value="0.05">0.05</option>'
 	   +'<option value="0.06">0.06</option>'
 	   +'<option value="0.07">0.07</option>'
@@ -53,11 +81,12 @@ function mainPage(){
 	   +'</div>'
 	   +'<div class="col-sm-6">'
 	   +'<select  class="form-control selectConf" id="massDisplacement" " style="height:auto;margin-bottom: 5px;">'
-	   +'<option value="0">--- Select Mass Displacement --- </option>'
+	   +'<option value="0" id="selectTitle2">--- Select Mass Displacement --- </option>'
 	   +'<option value="0.5">0.5</option>'
 	   +'<option value="1">1</option>'
 	   +'<option value="1.5">1.5</option>'
 	   +'<option value="2">2</option>'
+	    +'<option value="2.5">2.5</option>'
 	   +'</select>'
 	   +'</div>'
 	   +'</div>'  
@@ -68,8 +97,8 @@ function mainPage(){
 	   +'<label class="labelstyle"> Spring Constant(N/m): </label>'
 	   +'</div>'
 	   +'<div class="col-sm-6">'
-	   +'<select  class="form-control selectConf" id="sconst" " style="height:auto;margin-bottom: 5px;">'
-	   +'<option value="0">--- Select Mass Displacement --- </option>'
+	   +'<select  class="form-control selectConf" id="sconst"  style="height:auto;margin-bottom: 5px;">'
+	   +'<option value="0" id="selectTitle3">--- Select Spring Constant --- </option>'
 	   +'<option value="1000">1 &times; 10&sup3;</option>'
 	   +'<option value="1500">1.5 &times; 10&sup3;</option>'   
 	   +'<option value="2000">2 &times; 10&sup3;</option>'
@@ -89,10 +118,10 @@ function mainPage(){
 	   +'<label class="labelstyle">Calculate Natural Frequency (rad/s): </label>'
 	   +'</div>'
 		+'<div class="col-sm-3">'
-	+'<input type="text" id="calFreqInput" style= 10px;width:100%;"  class=" form-control" />'
+	+'<input type="number" id="calFreqInput" style= 10px;width:100%;"  class=" form-control" />'
 	   +'</div>'
 	   +'<div class="col-sm-3">'
-	+'<button type="button"  "  class="btn btn-danger btnStyle" id="checkAsnFrequency" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	+'<button type="button"    class="btn btn-danger btnStyle" id="checkAsnFrequency" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
 	   +'</div>'
 	    +'</div>'
 	    //  +'<br>'
@@ -103,10 +132,10 @@ function mainPage(){
 	   +'<label class="labelstyle">Convert Frequency (Hz): </label>'
 	   +'</div>'
 		+'<div class="col-sm-3">'
-	+'<input type="text" id="ConvrtFreqInput" style= 10px;width:100%;"  class=" form-control" />'
+	+'<input type="number" id="ConvrtFreqInput" style= 10px;width:100%;"  class=" form-control" />'
 	   +'</div>'
 	   +'<div class="col-sm-3">'
-	+'<button type="button"  "  class="btn btn-danger btnStyle" id="checkConvertFreq" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	+'<button type="button"    class="btn btn-danger btnStyle" id="checkConvertFreq" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
 	   +'</div>'
 	    +'</div>'
 	    // +'<br>'	          
@@ -119,10 +148,10 @@ function mainPage(){
 	   +'<label class="labelstyle">Calculate Accelaration (m/s<sup>2</sup>): </label>'
 	   +'</div>'
 		+'<div class="col-sm-3">'
-	+'<input type="text" id="acelerateInput" style= 10px;width:100%;"  class=" form-control" />'
+	+'<input type="number" id="acelerateInput" style= 10px;width:100%;"  class=" form-control" />'
 	   +'</div>'
 	   +'<div class="col-sm-3">'
-	+'<button type="button"  "  class="btn btn-danger btnStyle" id="checkAnsAcceleration" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	+'<button type="button"    class="btn btn-danger btnStyle" id="checkAnsAcceleration" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
 	   +'</div>'
 	    +'</div>'
 	    
@@ -150,8 +179,10 @@ function mainPage(){
 //				+ '</div>'
 //				+ ' </div>'  
 	$("#main-div-conf").html(selection);	
-     
-    $("#submitconfig").click(function() {
+	startImg123='<img src="images/startBtn.png" alt=" " width="25" height="25">';  
+
+	$("#submitconfig").click(function() {
+		cntSubmitConfig++;
 	massSelect = $("#mass").val();
 	massDSelect = $("#massDisplacement").val();
 	sconstSelect = $("#sconst").val();
@@ -169,17 +200,34 @@ function mainPage(){
 		$("#modelMsg").html("<b class='boldTextRed'>Select Spring Constant </b>");
 
 	}else{
+			startcheck_Flag=1;
+		$("#mass").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		$("#massDisplacement").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
+		$("#sconst").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+//		$("#selectTitle1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+//		$("#selectTitle2").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+//		$("#selectTitle3").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+				
 		$("#errorPanel").prop("hidden",true);
-
-		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully</b>");		
+		$("#modelMsg").html("<b class='boldTextGreen'>Configured Successfully. <br> Now Click On Start "+startImg123+"</b>");	
 		$("#checkConfg").prop('hidden',true);
 		$("#mass").prop('disabled',true);
 		$("#massDisplacement").prop('disabled',true);
 		$("#sconst").prop('disabled',true);
-		$("#submitconfig").prop('disabled',true);
-		$("#freqAnswer").prop('hidden',false);
-       mimic(massSelect,massDSelect,sconstSelect);
-	
+		
+//		$("#submitconfig").prop('disabled',true);
+//		$("#freqAnswer").prop('hidden',false);
+		var mainPg_T1=document.getElementById('hour').innerText = returnData(hour);
+  		var mainPg_T2=document.getElementById('minute').innerText = returnData(minute);
+  		var mainPg_T3=document.getElementById('second').innerText = returnData(second);
+ // 		console.log("MainPage Type1 : "+mainPg_T1+":"+mainPg_T2+":"+mainPg_T3);
+  		
+  		type1Config= mainPg_T1+":"+mainPg_T2+":"+mainPg_T3;
+//  	 	addToTimerMasterJson();
+				id1=0;id2=0;id3=0;
+		reset();
+       	mimic(massSelect,massDSelect,sconstSelect);
+		
 	}	
 
 	});
@@ -191,15 +239,17 @@ function mainPage(){
 
  fqFormula= '<img src="images/naturalFq.png" alt=" " width="170" height="60">'
 
-    var id1=1;
+    var id1=0;
      $("#checkAsnFrequency").click(function() {
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var fq = $("#calFreqInput").val();
+			   var fq = parseFloat($("#calFreqInput").val());
 			   	
 			   if (id1 <= 3) {
 				
 				if (fq == clculatedFrequency) {
+					
+//					console.log("id1 ="+id1);
 					checkAns = 0;
 					$("#convertFreq").prop('hidden',false);
 					$("#checkAsnFrequency").prop('disabled',true);
@@ -208,7 +258,7 @@ function mainPage(){
 				
 				} else if (fq != clculatedFrequency) {
 					
-			
+					
 				$("#modelMsg").html("<b class='boldTextRed'>Entered value is incorrect.Try again.</b> ");
 
 				}
@@ -223,15 +273,17 @@ function mainPage(){
 //				ax1 = $("#text2").val().trim();
 	
 				if (fq == clculatedFrequency) {
+					
 					checkAns = 0;
 				$("#convertFreq").prop('hidden',false);
 				$("#checkAsnFrequency").prop('disabled',true);
-
+//				console.log(" id1="+id1);
 				//addToMasterJSON();
 				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
 				
 					
 				} else {
+					
 					checkAns = 0;
 					 $("#modelMsg").html("<b class='boldTextBlue'>Correct Answer is " +clculatedFrequency+'</b>');
 					
@@ -240,7 +292,10 @@ function mainPage(){
 				}
 			}
 			id1++;
+			cntCalculateMainPage++;
+			
 	});	
+	
 
 //conver Frequency in Hz
  fqConvrtFormula= '<img src="images/convertFreq.png" alt=" " width="170" height="55">'
@@ -248,7 +303,7 @@ function mainPage(){
      $("#checkConvertFreq").click(function() {
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var freqConversion = $("#ConvrtFreqInput").val();
+			   var freqConversion = parseFloat($("#ConvrtFreqInput").val());
 	
 		   if (id2 <= 3) {
 				
@@ -294,6 +349,7 @@ function mainPage(){
 				}
 			}
 			id2++;
+			cntCalculateMainPage++;
 });	
 
 
@@ -302,22 +358,22 @@ var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="180" heig
        
 	id3=1;
      $("#checkAnsAcceleration").click(function() {
+		
 			 
 				$("body").css("padding","0px 0px 0px 0px");
-			   var AccelerateVal = $("#acelerateInput").val();
+			   var AccelerateVal = parseFloat($("#acelerateInput").val());
 	
 		 if (id3 <= 3) {
 				
 				if (AccelerateVal == acceleration) {
+					startEnableFlag=1;
 					checkAns = 0;
 					
-				$("#checkAnsAcceleration").prop('disabled',true);
-//				$("#submitconfig").prop('disabled',false);
-//				$("#mass").prop('disabled',false);
-//				$("#massDisplacement").prop('disabled',false);
-//				$("#sconst").prop('disabled',false);
-
-				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
+					if (tableReading ==4) {
+						$("#checkAnsAcceleration").prop('disabled',true);
+					}
+		
+					$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer. Click on stop button.</b>");
 				addToMasterJSON();
 				} else if (AccelerateVal != acceleration) {
 					
@@ -336,16 +392,13 @@ var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="180" heig
 //				ax1 = $("#text2").val().trim();
 	
 				if (AccelerateVal == acceleration) {
+					startEnableFlag=1;
 					checkAns = 0;
 					
-				$("#checkAnsAcceleration").prop('disabled',true);
-			
-//				$("#submitconfig").prop('disabled',false);
-//				$("#mass").prop('disabled',false);
-//				$("#massDisplacement").prop('disabled',false);
-//				$("#sconst").prop('disabled',false);
-
-				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer</b>");
+					if (tableReading ==4) {
+						$("#checkAnsAcceleration").prop('disabled',true);
+					}
+				$("#modelMsg").html("<b class='boldTextGreen'>Correct Answer. Click on stop button.</b>");
 				addToMasterJSON();
 					
 				} else {
@@ -355,11 +408,23 @@ var Aformula='<img src="images/AccelarationFormula.png" alt=" " width="180" heig
 				}
 			}
 			id3++;
-			
+			cntCalculateMainPage++;
 	});
-
-	             
+	addToCntCalMain1MasterJson();            
 }
 
+//var cntCalMain1ArrayJson=[];
+//var cntCalMain1MasterJson={};
+function addToCntCalMain1MasterJson(){
+ 			var cntCalMain1tempJson={};
+				cntCalMain1tempJson.cntSubmitConfig= cntSubmitConfig;
 
+			let lastEntry1 = cntCalMain1ArrayJson[cntCalMain1ArrayJson.length - 1] || {cntCalculateMainPage: 0 };
+			cntCalMain1tempJson.cntCalculateMainPage = lastEntry1.cntCalculateMainPage + cntCalculateMainPage; // Add the new count			  
+//            cntCalMain1tempJson.cntSubmitConfig = lastEntry1.cntSubmitConfig + cntSubmitConfig; // Add the new count
+   			cntCalMain1ArrayJson.push(cntCalMain1tempJson);
+			counterMasterJson.cntCalMain1MasterJson = cntCalMain1ArrayJson;
+		
+						
 
+}
