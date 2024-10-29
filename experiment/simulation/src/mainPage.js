@@ -201,9 +201,9 @@ startTimer();
 
 	}else{
 			startcheck_Flag=1;
-		$("#mass").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
-		$("#massDisplacement").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
-		$("#sconst").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		//$("#mass").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		//$("#massDisplacement").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
+		//$("#sconst").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 //		$("#selectTitle1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 //		$("#selectTitle2").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 //		$("#selectTitle3").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
