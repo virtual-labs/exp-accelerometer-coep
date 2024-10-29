@@ -315,6 +315,10 @@ var vibrate;
 stop.node.style.pointerEvents = 'none';
 start.click(function(){
 	start.node.style.pointerEvents = 'none';
+	$("#mass1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		$("#massDisplacement1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
+		$("#sconst1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		$("#forceVal1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 	$("#submitconfigPg2").prop('disabled',true);
 	Type2star_Flag=1;
 		$("#freqAnswer").prop('hidden',false);

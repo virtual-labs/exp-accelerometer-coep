@@ -262,6 +262,9 @@ stop.node.style.pointerEvents = 'none';
 
 start.click(function(){
 	start.node.style.pointerEvents = 'none';
+	$("#mass").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		$("#massDisplacement").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
+		$("#sconst").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 	$("#submitconfig").prop('disabled',true);
 	Type1star_Flag=1;
 	$("#freqAnswer").prop('hidden',false);
