@@ -115,7 +115,7 @@ function mainPage2(){
 
 	  +'<div class="row" id="selectConf" >'
 	  +'<div class="col-sm-12">'
-	  +'<button type="button" class="btn btn-danger btnStyle" id="submitconfigPg2" data-toggle="modal" data-target="#selectCheck" ><b>SUBMIT </b></button>'
+	  +'<button type="button" class="btn btn-danger btnStyle" id="submitconfigPg2" data-toggle="modal" data-target="#selectCheck" ><b>CHECK CONFIGURATION </b></button>'
 	  +'</div>'
 	  +'</div>'
 	    
@@ -212,10 +212,10 @@ function mainPage2(){
 		$("#modelMsg").html("<b class='boldTextRed'>Select Force </b>");
 	}else{	 
 
-		$("#mass1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
-		$("#massDisplacement1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
-		$("#sconst1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
-		$("#forceVal1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		//$("#mass1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		//$("#massDisplacement1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);	
+		//$("#sconst1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
+		//$("#forceVal1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 		$("#selectTitle1").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 		$("#selectTitle2").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
 		$("#selectTitle3").children(":selected").css("background-color","#f7dddd").prop("disabled", true);
