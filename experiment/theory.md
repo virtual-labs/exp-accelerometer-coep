@@ -31,13 +31,13 @@ Dynamic acceleration forces are non-uniform, and the best example is vibration o
 ### Applications
 
 - The accelerometer has the capacity to sense the vibration from a micro-scale to a large scale. Even in most of the safety installations, the accelerometer is used. 
-- An accelerometer is also used in sports. The wearable devices athletes are using daily for practice and observations comprise accelerometers or gyroscopes. 
+- An accelerometer is used in sports. The wearable devices made for athletes comprises accelerometer. 
 - The physicians use it to check for gain in body mass and monitor body movements. It is also present in the devices used to check the heart rate. 
 - The piezoelectric accelerometers are used at the industrial level.
 - The most frequent accelerometer used in aerospace is Micro-Electro-Mechanical-sensors(the MEMS technology) based. The reason for using MEMS sensor-based accelerometers is that they can sense the vibrations even on a micro-scale and can also provide value on a micro-scale.
 - It is even used for satellites which are in space, as it can tolerate high pressure, heat, and vibration. 
-- For purposes like gearbox analysis, bearing analysis, rotor trim, and balance, an accelerometer plays an important role.
-- The aircraft are navigated using the accelerometer. Aircraft flight testing is another thing that requires an accelerometer. To check the characteristics of flight and to confirm its design it an accurate observation of data is expected. For that, an accelerometer named LCA-5080 is in use.
+- An accelerometer plays an important role for purposes like gearbox analysis, bearing analysis, rotor trim and balance.
+- The aircraft are navigated using the accelerometer. Aircraft flight testing is another thing that requires an accelerometer. To check the characteristics of flight and to confirm its design, an accurate observation of data is expected. For that, an accelerometer named LCA-5080 is used.
 - An accelerometer is used for safety purposes in laptops for the hard discs. Because of accelerometer sensors, we have landscape and portrait modes on our phones. Mobile phones keep changing the screen mode in landscape or portrait mode due to accelerometer applications.
 
 
