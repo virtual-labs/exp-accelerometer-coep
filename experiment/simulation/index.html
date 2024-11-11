@@ -67,6 +67,17 @@
   100% { background-color: #B20000; box-shadow: 0 0 3px #B20000; }
 }
 
+.modal-header1{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+     background-color: #001f3f; /* Navy blue background */
+    color: red; /* White text color */
+   
+    }
+
+
+
 </style>
 
 <body >
@@ -78,6 +89,19 @@
 		
 	</header>
 <br>
+
+<div class="row"  >
+ <div class="col-sm-10"  >
+ </div>
+ 
+  <div class="col-sm-2"  >
+ <button type="button" class="btn btn-danger" style="margin-top:7px;margin-bottom:5px;"  id = "pdfDownload" hidden>
+	  Download Report	 
+	</button>
+</div>
+</div>
+
+
 <div  class=" container-fluid" > 
  <div class="row FirstRowtimer " id="selectMethod" hidden>
       <div class="col-sm-1">
@@ -94,13 +118,56 @@
       </div>
       <div class="col-sm-2">
       <button type="button" class="btn btn-danger button1" id="procedure" data-toggle="modal" data-target="#readProcedureModal"><b>PROCEDURE</b></button> 
+ 	</div>
+	  
+	  <div class="col-sm-1">
+      <button type="button" class="btn btn-danger" id="simDemo" data-toggle="modal" data-target="#readProcedureModal1"><b>Simulation Demo</b></button> 
+	  
+	  
  	  </div>
 	 
+	 <div class="col-sm-1">
+	 
+	
+	 
+	 
+	 </div>
  	  <div class="col-sm-2" style="margin-top: 10px;margin-bottom: 10px"  hidden>
  		<span  id="hour" class="timer">00</span>:<span id="minute" class="timer">00</span>:<span class="timer" id="second">00</span> 	     	
  	  </div>    
  </div> 
 </div>
+
+
+
+ <div id="readProcedureModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog  modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header1">
+        <h3 class="modal-title12" style="color:#fff;">DEMO</h3>
+<!--         <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+      </div>
+      <div class="modal-body12">
+ 
+
+<center><video id="simVideo" width="90%" controls>
+    <source src="images/simulation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></center>
+  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
 
 <div id="readProcedureModal" class="modal fade" role="dialog">
   <div class="modal-dialog  modal-lg">
@@ -236,12 +303,55 @@ Copyrights &copy; COEP - Virtual Lab
 <!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
 
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script> -->
+<!-- https://code.jquery.com/jquery-3.5.1.js -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="lib/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+<script type="text/javascript" src="lib/raphael.js"></script>
+<script type="text/javascript" src="lib/raphael.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script> -->
+
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/export-data.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+
+<!-- <script src="https://code.highcharts.com/stock/highstock.js"></script> -->
+<!-- <script src="https://code.highcharts.com/stock/modules/exporting.js"></script> -->
+<!-- <script src="https://code.highcharts.com/stock/modules/export-data.js"></script> -->
+<!-- <script src="https://code.highcharts.com/modules/accessibility.js"></script> -->
+
+
 <script src="https://code.highcharts.com/stock/highstock.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/offline-exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> -->
+  
+<!--   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
+  <script type="text/javascript" src="src/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
 
 <script type="text/javascript" src="src/questionJson.js"></script>
 <script type="text/javascript" src="src/questions.js"></script>
@@ -253,4 +363,55 @@ Copyrights &copy; COEP - Virtual Lab
 <script type="text/javascript" src="src/table.js"></script>
 <script type="text/javascript" src="src/timer.js"></script>
 <script type="text/javascript" src="src/analysis.js"></script>
+
+
+<script>
+$('#readProcedureModal1').click(function(){
+	 $('video').each(function(){
+		    $(this).get(0).pause();
+		  })
+	})
+
+$("#simDemo").on("click", function(){
+	
+	var video = document.getElementById("simVideo");
+
+	// Define the start and end skip times (in seconds)
+	var skipStart = 0;  // Skip the first 5 seconds
+	var skipEnd = 7;    // Skip the last 5 seconds
+
+//	video.onloadedmetadata = function() { 
+	    // Get the duration of the video
+	    var videoDuration = video.duration;
+
+	    // Ensure the video plays between skipStart and (duration - skipEnd)
+	    video.currentTime = skipStart;
+
+	    // Event listener to pause the video when it reaches the end limit (video duration - skipEnd)
+	    video.ontimeupdate = function() {
+	        if (video.currentTime >= videoDuration - skipEnd) {
+	            video.pause();
+				video.currentTime = skipStart;
+	        }
+	    };
+
+	    // Prevent seeking outside the allowed time range
+	    video.addEventListener('seeking', function(event) {
+	        // If seeking before the start time or after the allowed end time, reset the current time
+	        if (video.currentTime < skipStart) {
+	            video.currentTime = skipStart;
+	        } else if (video.currentTime > videoDuration - skipEnd) {
+	            //video.currentTime = videoDuration - skipEnd;
+				video.currentTime = skipStart;
+	        }
+	    });
+//	};
+	
+	video.play();
+})
+
+
+</script>
+
+
 </html>
