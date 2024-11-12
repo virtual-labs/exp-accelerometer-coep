@@ -1,0 +1,64 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following instrument is useful only for low frequency applications?",
+      "answers": {
+        "a": "LVDT Accelerometers",
+        "b": "Piezo-Electric Accelerometers",
+        "c": "Potentiometric Accelerometers",
+        "d": "Digital Accelerometers"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Seismic transducers are also known as",
+      "answers": {
+        "a": "Seismic displacement",
+        "b": "Seismic accelerometer",
+        "c": "Seismic velocity",
+        "d": "Seismic acceleration"
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "When accelerometers operate in the displacement mode the ratio of forcing frequency to natural frequency should be",
+      "answers": {
+        "a": "above 200",
+        "b": "below 2",
+        "c": "below 1",
+        "d": "above 2"
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+	
+	
+	{
+      "question": "When seismic transducers are used in the acceleration made they should be designed with",
+      "answers": {
+        "a": "stiff springs and small mass",
+        "b": "heavy mass and weak springs",
+        "c": "weak springs and small mass",
+        "d": "heavy mass and small mass"
+      },
+      "correctAnswer": "a",
+      "difficulty": "beginner"
+    },
+	
+	{
+      "question": "A piezo-electrical crystal generates voltage when subjected to _______ force.",
+      "answers": {
+        "a": "Electrical",
+        "b": "Gravity",
+        "c": "Mechanical",
+        "d": "All of the above"
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    }
+	
+  ]
+}
